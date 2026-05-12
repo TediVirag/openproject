@@ -1,0 +1,7 @@
+extends: default
+
+rules:
+  comments:
+    require-starting-space: false
+  key-ordering: {}
+  line-length: disable
