@@ -54,22 +54,20 @@ See COPYRIGHT and LICENSE files for more details.
       end
     end
 
-    if selected_tab == :types_and_statuses
-      header.with_action_menu(
-        menu_arguments: { anchor_align: :end },
-        button_arguments: {
-          icon: :"kebab-horizontal",
-          "aria-label": t(:label_more)
-        }
-      ) do |menu|
-        menu.with_item(
-          tag: :button,
-          href: rebuild_positions_project_settings_backlogs_path(@project),
-          label: t(:"backlogs.rebuild_positions"),
-          form_arguments: { method: :post, data: { turbo_frame: "_top" } }
-        ) do |item|
-          item.with_leading_visual_icon(icon: :sync)
-        end
+    header.with_action_menu(
+      menu_arguments: { anchor_align: :end },
+      button_arguments: {
+        icon: :"kebab-horizontal",
+        "aria-label": t(:label_more)
+      }
+    ) do |menu|
+      menu.with_item(
+        tag: :button,
+        href: rebuild_positions_project_settings_backlogs_path(@project),
+        label: t(:"backlogs.rebuild_positions"),
+        form_arguments: { method: :post, data: { turbo_frame: "_top" } }
+      ) do |item|
+        item.with_leading_visual_icon(icon: :sync)
       end
     end
   end
