@@ -38,21 +38,5 @@ module Users
         .grep_v(Queries::Users::Filters::BlockedFilter)
         .sort_by(&:human_name)
     end
-
-    protected
-
-    def additional_filter_attributes(filter)
-      case filter
-      when Queries::Users::Filters::GroupFilter
-        {
-          autocomplete_options: {
-            component: "opce-group-autocompleter",
-            resource: "groups"
-          }
-        }
-      else
-        super
-      end
-    end
   end
 end

@@ -30,4 +30,8 @@
 
 class Queries::Users::Filters::GroupFilter < Queries::Users::Filters::UserFilter
   include Queries::Filters::Shared::GroupFilter
+
+  def autocomplete_options
+    { component: "opce-group-autocompleter", resource: "groups" }
+  end
 end
